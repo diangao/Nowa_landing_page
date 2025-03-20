@@ -428,6 +428,23 @@
             position: relative;
             z-index: 10;
         }
+
+        /* 增加字体大小的自定义样式 */
+        .font-medium {
+            font-size: 13px !important;
+        }
+        
+        #task-container .text-[11px], 
+        p.text-xs,
+        .text-white .text-[10px],
+        .quick-reply-btn {
+            font-size: 12px !important;
+        }
+
+        /* 去除底部可能的紫色条 */
+        .bg-[#9370DB] + .bg-[#9370DB] {
+            background: transparent !important;
+        }
     </style>
 </head>
 <body class="min-h-screen page-transition">
@@ -628,10 +645,10 @@
                                                     </div>
                                                     <div class="text-white">
                                                         <div class="font-bold text-xs">本周进展</div>
-                                                        <div class="text-xs opacity-80">已坚持 5 天，相比上周提升 25%</div>
+                                                        <div class="text-[10px] opacity-80">已坚持 5 天，相比上周提升 25%</div>
                                                     </div>
                                                 </div>
-                                                <div class="flex flex-wrap gap-1 text-white text-xs mb-2">
+                                                <div class="flex flex-wrap gap-1 text-white text-[10px] mb-2">
                                                     <div class="px-2 py-0.5 bg-white/20 rounded-full">完成训练 3/5</div>
                                                     <div class="px-2 py-0.5 bg-white/20 rounded-full">消耗 1200 千卡</div>
                                                     <div class="px-2 py-0.5 bg-white/20 rounded-full">休息充分</div>
@@ -663,12 +680,12 @@
                                                 </div>
                                                 
                                                 <!-- 任务列表 - ID更改为task-container以符合JS逻辑 -->
-                                                <div id="task-container" class="text-xs space-y-2 -mx-1">
+                                                <div id="task-container" class="text-[12px] space-y-2 -mx-1">
                                                     <div class="flex items-start p-1.5">
                                                         <input type="checkbox" title="完成10分钟热身拉伸" class="w-4 h-4 mt-0.5 rounded-sm border-2 border-gray-300">
                                                         <div class="flex-1 ml-2.5">
                                                             <div class="font-medium">10 分钟热身拉伸</div>
-                                                            <div class="text-xs text-gray-500 mt-0.5">肩部环绕5x12次，腹部核心桥10x3组，深蹲预备10x3组</div>
+                                                            <div class="text-[11px] text-gray-500 mt-0.5">肩部环绕5x12次，腹部核心桥10x3组，深蹲预备10x3组</div>
                                                         </div>
                                                     </div>
                                                     
@@ -676,7 +693,7 @@
                                                         <input type="checkbox" title="完成30分钟有氧" class="w-4 h-4 mt-0.5 rounded-sm border-2 border-gray-300">
                                                         <div class="flex-1 ml-2.5">
                                                             <div class="font-medium">30 分钟有氧</div>
-                                                            <div class="text-xs text-gray-500 mt-0.5">跑步15分钟(心率区间130-150)，HIIT循环训练15分钟(20秒全力，10秒休息)</div>
+                                                            <div class="text-[11px] text-gray-500 mt-0.5">跑步15分钟(心率区间130-150)，HIIT循环训练15分钟(20秒全力，10秒休息)</div>
                                                         </div>
                                                     </div>
                                                     
@@ -684,7 +701,7 @@
                                                         <input type="checkbox" title="完成15分钟力量训练" class="w-4 h-4 mt-0.5 rounded-sm border-2 border-gray-300">
                                                         <div class="flex-1 ml-2.5">
                                                             <div class="font-medium">15 分钟力量训练</div>
-                                                            <div class="text-xs text-gray-500 mt-0.5">俯卧撑3x8次，哑铃弯举3x12次，平板支撑3x30秒</div>
+                                                            <div class="text-[11px] text-gray-500 mt-0.5">俯卧撑3x8次，哑铃弯举3x12次，平板支撑3x30秒</div>
                                                         </div>
                                                     </div>
                                                     
@@ -692,12 +709,12 @@
                                                         <input type="checkbox" title="完成5分钟冷却放松" class="w-4 h-4 mt-0.5 rounded-sm border-2 border-gray-300">
                                                         <div class="flex-1 ml-2.5">
                                                             <div class="font-medium">5 分钟冷却放松</div>
-                                                            <div class="text-xs text-gray-500 mt-0.5">全身放松拉伸，重点是背部和腿部肌肉群</div>
+                                                            <div class="text-[11px] text-gray-500 mt-0.5">全身放松拉伸，重点是背部和腿部肌肉群</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 
-                                                <div class="mt-2 text-[10px] text-gray-500 flex justify-between items-center">
+                                                <div class="mt-2 text-[11px] text-gray-500 flex justify-between items-center">
                                                     <div>预计完成时间: <span class="font-medium">55分钟</span></div>
                                                     <div>消耗: <span class="font-medium">320千卡</span></div>
                                                 </div>
@@ -719,36 +736,36 @@
                                     </div>
                                     
                                     <!-- 快速回复栏 -->
-                                    <div class="quick-replies py-1 px-3 bg-white/90 border-t border-gray-200 flex gap-2 overflow-x-auto">
-                                        <button class="quick-reply-btn whitespace-nowrap text-[10px] bg-gray-100 hover:bg-[#F0E6FF] px-2.5 py-1 rounded-full text-gray-700" title="回复：膝盖有点不舒服">膝盖有点不舒服</button>
-                                        <button class="quick-reply-btn whitespace-nowrap text-[10px] bg-gray-100 hover:bg-[#F0E6FF] px-2.5 py-1 rounded-full text-gray-700" title="回复：今天时间很紧张">今天时间很紧张</button>
-                                        <button class="quick-reply-btn whitespace-nowrap text-[10px] bg-gray-100 hover:bg-[#F0E6FF] px-2.5 py-1 rounded-full text-gray-700" title="回复：能增加训练强度吗">能增加训练强度吗</button>
+                                    <div class="quick-replies py-1 px-2.5 bg-white/90 border-t border-gray-200 flex gap-2 overflow-x-auto">
+                                        <button class="quick-reply-btn whitespace-nowrap text-[11px] bg-gray-100 hover:bg-[#F0E6FF] px-2 py-1 rounded-full text-gray-700" title="回复：膝盖有点不舒服">膝盖有点不舒服</button>
+                                        <button class="quick-reply-btn whitespace-nowrap text-[11px] bg-gray-100 hover:bg-[#F0E6FF] px-2 py-1 rounded-full text-gray-700" title="回复：今天时间很紧张">今天时间很紧张</button>
+                                        <button class="quick-reply-btn whitespace-nowrap text-[11px] bg-gray-100 hover:bg-[#F0E6FF] px-2 py-1 rounded-full text-gray-700" title="回复：能增加训练强度吗">能增加训练强度吗</button>
                                     </div>
                                     
                                     <!-- 底部输入区 -->
-                                    <div class="input-area px-2 py-2 bg-white border-t border-gray-100 flex items-center">
-                                        <button id="voice-btn" class="voice-input-btn relative w-8 h-8 bg-[#9370DB] rounded-full flex items-center justify-center text-white mr-2" title="语音输入">
+                                    <div class="input-area px-2 py-1.5 bg-white border-t border-gray-100 flex items-center">
+                                        <button id="voice-btn" class="voice-input-btn relative w-7 h-7 bg-[#9370DB] rounded-full flex items-center justify-center text-white mr-2" title="语音输入">
                                             <div class="voice-ripple"></div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
                                                 <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd" />
                                             </svg>
                                         </button>
-                                        <div class="flex-1 bg-gray-100 rounded-full px-3 py-2 text-xs text-gray-500 flex items-center">
+                                        <div class="flex-1 bg-gray-100 rounded-full px-3 py-1.5 text-[11px] text-gray-500 flex items-center">
                                             <span>告诉Nowy你今天的状态...</span>
                                             <div class="ml-auto flex gap-1.5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clip-rule="evenodd" />
                                                 </svg>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
                                                 </svg>
                                             </div>
                                         </div>
                                     </div>
                                     
-                                    <!-- 底部iPhone风格Home Indicator -->
-                                    <div class="absolute bottom-0 left-0 right-0 py-[5px] bg-white flex justify-center">
-                                        <div class="w-[80px] h-[4px] bg-black/20 rounded-full"></div>
+                                    <!-- 底部iPhone风格Home Indicator，调整颜色去除紫色 -->
+                                    <div class="absolute bottom-0 left-0 right-0 py-[4px] bg-white flex justify-center">
+                                        <div class="w-[70px] h-[4px] bg-black/20 rounded-full"></div>
                                     </div>
                                     
                                     <!-- 隐藏的语音输入选项 -->
