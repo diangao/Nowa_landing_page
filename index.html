@@ -445,6 +445,10 @@
         .bg-[#9370DB] + .bg-[#9370DB] {
             background: transparent !important;
         }
+
+        #see-demo-btn, .genshin-btn {
+            font-size: 26px !important;
+        }
     </style>
 </head>
 <body class="min-h-screen page-transition">
@@ -477,10 +481,10 @@
                     Nowa，不是训练计划，而是帮你找到现实生活中真正可行的节奏。
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="genshin-btn px-8 py-3 rounded-full text-white font-medium text-lg btn-text">
+                    <button class="genshin-btn px-8 py-3 rounded-full text-white font-medium text-2xl btn-text">
                         开始你的 Nowa 旅程
                     </button>
-                    <button class="px-8 py-3 rounded-full border-2 border-accent text-dark hover:bg-accent/10 transition-colors font-medium text-lg btn-text">
+                    <button id="see-demo-btn" class="px-8 py-3 rounded-full border-2 border-accent text-dark hover:bg-accent/10 transition-colors font-medium text-2xl btn-text">
                         看看它能怎么帮我
                     </button>
                 </div>
@@ -742,30 +746,33 @@
                                         <button class="quick-reply-btn whitespace-nowrap text-[11px] bg-gray-100 hover:bg-[#F0E6FF] px-2 py-1 rounded-full text-gray-700" title="回复：能增加训练强度吗">能增加训练强度吗</button>
                                     </div>
                                     
-                                    <!-- 底部输入区 -->
-                                    <div class="input-area px-2 py-1.5 bg-white border-t border-gray-100 flex items-center">
-                                        <button id="voice-btn" class="voice-input-btn relative w-7 h-7 bg-[#9370DB] rounded-full flex items-center justify-center text-white mr-2" title="语音输入">
-                                            <div class="voice-ripple"></div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd" />
-                                            </svg>
-                                        </button>
-                                        <div class="flex-1 bg-gray-100 rounded-full px-3 py-1.5 text-[11px] text-gray-500 flex items-center">
-                                            <span>告诉Nowy你今天的状态...</span>
-                                            <div class="ml-auto flex gap-1.5">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clip-rule="evenodd" />
+                                    <!-- 底部区域包装器 - 添加溢出隐藏和圆角 -->
+                                    <div class="absolute bottom-0 left-0 right-0 overflow-hidden" style="border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;">
+                                        <!-- 底部输入区 -->
+                                        <div class="input-area px-2 py-1.5 bg-white border-t border-gray-100 flex items-center">
+                                            <button id="voice-btn" class="voice-input-btn relative w-7 h-7 bg-[#9370DB] rounded-full flex items-center justify-center text-white mr-2" title="语音输入">
+                                                <div class="voice-ripple"></div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M7 4a3 3 0 016 0v4a3 3 0 11-6 0V4zm4 10.93A7.001 7.001 0 0017 8a1 1 0 10-2 0A5 5 0 015 8a1 1 0 00-2 0 7.001 7.001 0 006 6.93V17H6a1 1 0 100 2h8a1 1 0 100-2h-3v-2.07z" clip-rule="evenodd" />
                                                 </svg>
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
-                                                </svg>
+                                            </button>
+                                            <div class="flex-1 bg-gray-100 rounded-full px-3 py-1.5 text-[11px] text-gray-500 flex items-center">
+                                                <span>告诉Nowy你今天的状态...</span>
+                                                <div class="ml-auto flex gap-1.5">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clip-rule="evenodd" />
+                                                    </svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-gray-400" viewBox="0 0 20 20" fill="currentColor">
+                                                        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    
-                                    <!-- 底部iPhone风格Home Indicator，调整颜色去除紫色 -->
-                                    <div class="absolute bottom-0 left-0 right-0 py-[4px] bg-white flex justify-center">
-                                        <div class="w-[70px] h-[4px] bg-black/20 rounded-full"></div>
+                                        
+                                        <!-- 底部iPhone风格Home Indicator -->
+                                        <div class="py-[4px] bg-white flex justify-center">
+                                            <div class="w-[70px] h-[4px] bg-black/20 rounded-full"></div>
+                                        </div>
                                     </div>
                                     
                                     <!-- 隐藏的语音输入选项 -->
@@ -1085,7 +1092,7 @@
                     <a href="#" class="hover:text-primary transition-colors">联系我们</a>
                 </div>
                 <div class="mt-4 md:mt-0 text-sm">
-                    © 2024 Nowa. All rights reserved.
+                    © 2025 Nowa. All rights reserved.
                 </div>
             </div>
         </div>
@@ -1120,6 +1127,34 @@
                     }, 500);
                 }, 10);
             });
+        });
+
+        // 添加"看看它能怎么帮我"按钮的滚动功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const seeDemoBtn = document.getElementById('see-demo-btn');
+            if (seeDemoBtn) {
+                seeDemoBtn.addEventListener('click', function() {
+                    // 滚动到solution部分的标题
+                    const solutionSection = document.getElementById('solution');
+                    if (solutionSection) {
+                        // 找到solution部分的标题
+                        const solutionTitle = solutionSection.querySelector('h2');
+                        if (solutionTitle) {
+                            // 滚动到标题位置
+                            solutionTitle.scrollIntoView({ behavior: 'smooth' });
+                        } else {
+                            // 如果找不到标题，就滚动到solution部分
+                            solutionSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    } else {
+                        // 如果找不到solution部分，尝试滚动到adaptation-demo
+                        const demoElement = document.getElementById('adaptation-demo');
+                        if (demoElement) {
+                            demoElement.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    }
+                });
+            }
         });
 
         // Background particles
