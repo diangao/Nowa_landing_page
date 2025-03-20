@@ -447,7 +447,14 @@
         }
 
         #see-demo-btn, .genshin-btn {
-            font-size: 26px !important;
+            font-size: 14px !important; /* 调整为合适的大小，而不是26px */
+        }
+        
+        /* 增加按钮高度 */
+        #see-demo-btn, .genshin-btn, .quick-reply-btn {
+            padding-top: 0.75rem !important;    /* py-3 */
+            padding-bottom: 0.75rem !important; /* py-3 */
+            line-height: 1.5 !important;        /* 增加行高 */
         }
     </style>
 </head>
@@ -464,7 +471,7 @@
                 <a href="#solution" class="text-dark hover:text-accent transition-colors">Nowa 方案</a>
                 <a href="#stories" class="text-dark hover:text-accent transition-colors">用户故事</a>
             </div>
-            <button id="cta-nav-btn" class="genshin-btn px-5 py-1.5 rounded-full text-white font-medium text-sm btn-text">立即体验</button>
+            <button id="cta-nav-btn" class="genshin-btn px-5 py-2 rounded-full text-white text-sm btn-text">立即体验</button>
         </div>
     </nav>
 
@@ -480,11 +487,11 @@
                     告别"失败-摆烂"循环，让健身成为可以坚持的事情。
                     Nowa，不是训练计划，而是帮你找到现实生活中真正可行的节奏。
                 </p>
-                <div class="flex flex-col sm:flex-row gap-5">
-                    <button class="genshin-btn px-6 py-2 rounded-full text-white font-medium text-base btn-text">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="genshin-btn px-8 py-3 rounded-full text-white text-sm btn-text">
                         开始你的 Nowa 旅程
                     </button>
-                    <button id="see-demo-btn" class="px-6 py-2 rounded-full border-2 border-accent text-dark hover:bg-accent/10 transition-colors font-medium text-base btn-text">
+                    <button id="see-demo-btn" class="px-8 py-3 rounded-full border-2 border-accent text-dark hover:bg-accent/10 transition-colors text-sm btn-text">
                         看看它能怎么帮我
                     </button>
                 </div>
@@ -1069,7 +1076,7 @@
                 不需要极端，不需要完美，只需要每天比昨天更好一点点。
             </p>
             <div class="relative inline-block group">
-                <button id="cta-btn" class="genshin-btn px-6 py-2 rounded-full text-white font-medium text-base animate-pulse-slow relative z-10 btn-text">
+                <button id="cta-btn" class="genshin-btn px-8 py-3 rounded-full text-white text-sm animate-pulse-slow relative z-10 btn-text">
                     立即体验
                 </button>
                 <div class="absolute -inset-0.5 bg-gradient-to-r from-primary to-accent rounded-full blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-pulse-light"></div>
