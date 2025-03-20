@@ -555,22 +555,222 @@
                 <!-- Solution Illustration -->
                 <div class="md:w-1/2">
                     <div class="genshin-card rounded-xl p-6 overflow-hidden relative h-[500px] animate-float">
-                        <!-- UI Cards Animation -->
-                        <div class="absolute top-1/6 right-1/6 w-40 h-24 genshin-card rounded-lg transform -rotate-6 animate-pulse-light" style="animation-delay: 0.3s; z-index: 2;">
-                            <div class="p-3">
-                                <div class="h-3 w-2/3 bg-accent/50 rounded-full mb-2"></div>
-                                <div class="h-2 w-full bg-primary/30 rounded-full mb-1"></div>
-                                <div class="h-2 w-4/5 bg-primary/30 rounded-full"></div>
+                        <!-- 替换占位图为交互式组件 -->
+                        <div id="adaptation-demo" class="w-full h-full bg-[#C6A5FF] rounded-2xl p-0 overflow-hidden relative" style="max-width: 380px; margin: 0 auto;">
+                            <!-- 手机UI模拟 -->
+                            <div class="phone-frame">
+                                <!-- 手机状态栏 -->
+                                <div class="status-bar flex justify-between items-center px-4 py-2 bg-[#9370DB]/90 text-white">
+                                    <div class="text-xs">10:42</div>
+                                    <div class="flex space-x-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- App标题栏 -->
+                                <div class="app-header flex items-center px-4 py-3 bg-[#9370DB] text-white">
+                                    <div class="flex items-center">
+                                        <img src="./assets/images/nowy.png" class="w-8 h-8 mr-2 rounded-full object-cover bg-white/80" alt="Nowy">
+                                        <div>
+                                            <div class="font-bold text-sm">Nowy</div>
+                                            <div class="text-xs opacity-80">在线</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 聊天内容区 -->
+                                <div class="chat-area flex flex-col p-4 bg-[#F0E6FF] h-[380px] overflow-y-auto">
+                                    <!-- 进度摘要卡片 -->
+                                    <div class="flex mb-6 nowy-msg animate-fade-in" style="animation-delay: 0.2s;">
+                                        <div class="bg-gradient-to-r from-[#9370DB] to-[#A8DDFF] rounded-2xl p-4 w-full shadow-md">
+                                            <div class="flex items-center mb-3">
+                                                <div class="w-10 h-10 rounded-full bg-white/80 flex items-center justify-center mr-3">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#9370DB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                                    </svg>
+                                                </div>
+                                                <div class="text-white">
+                                                    <div class="font-bold text-sm">本周进展</div>
+                                                    <div class="text-xs opacity-80">已坚持 5 天，相比上周提升 25%</div>
+                                                </div>
+                                            </div>
+                                            <div class="flex space-x-2 text-white text-xs mb-3">
+                                                <div class="px-2 py-1 bg-white/20 rounded-full">完成训练 3/5</div>
+                                                <div class="px-2 py-1 bg-white/20 rounded-full">消耗 1200 千卡</div>
+                                                <div class="px-2 py-1 bg-white/20 rounded-full">休息充分</div>
+                                            </div>
+                                            <div class="w-full h-1.5 bg-white/30 rounded-full overflow-hidden">
+                                                <div class="h-full bg-white rounded-full" style="width: 60%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Nowy欢迎消息 -->
+                                    <div class="flex mb-4 nowy-msg animate-fade-in" style="animation-delay: 0.6s;">
+                                        <div class="mr-2">
+                                            <img src="./assets/images/nowy.png" class="w-8 h-8 rounded-full object-cover bg-white/80" alt="Nowy">
+                                        </div>
+                                        <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow-sm">
+                                            <p class="text-sm">早上好！你这周表现很棒，已经连续训练3天了，比上周提高了25%！今天我为你准备了根据你身体状况定制的计划 ✨</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 训练计划消息 -->
+                                    <div class="flex mb-4 ml-10 nowy-msg animate-fade-in" style="animation-delay: 1s;">
+                                        <div class="bg-white rounded-2xl p-4 shadow-sm w-full">
+                                            <div class="font-bold text-sm text-[#9370DB] mb-3 flex items-center">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                                </svg>
+                                                今日训练计划
+                                            </div>
+                                            <div id="task-container" class="text-sm space-y-3">
+                                                <!-- 任务通过JS动态添加 -->
+                                            </div>
+                                            
+                                            <div class="mt-3 text-xs text-gray-500">
+                                                预计完成时间: 55分钟 · 消耗: 320千卡
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 用户回复提示 -->
+                                    <div class="text-center text-xs text-gray-500 my-2 typing-indicator opacity-0">
+                                        <span class="typing-dot">.</span>
+                                        <span class="typing-dot">.</span>
+                                        <span class="typing-dot">.</span>
+                                    </div>
+                                    
+                                    <!-- 用户消息容器 - 由JS控制显示 -->
+                                    <div id="user-msg-container"></div>
+                                    
+                                    <!-- Nowy响应消息容器 - 由JS控制显示 -->
+                                    <div id="nowy-response-container"></div>
+                                </div>
+                                
+                                <!-- 底部输入区 -->
+                                <div class="input-area p-3 bg-white border-t border-gray-200 flex items-center">
+                                    <button id="voice-btn" class="voice-input-btn relative w-12 h-12 bg-gradient-to-r from-[#9370DB] to-[#A8DDFF] rounded-full flex items-center justify-center text-white mr-3 shadow-md" title="语音输入" aria-label="按下开始语音输入">
+                                        <div class="voice-ripple"></div>
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                                        </svg>
+                                    </button>
+                                    <div class="flex-1 bg-gray-100 rounded-full px-4 py-2.5 text-sm text-gray-500 flex items-center">
+                                        <span>告诉Nowy你今天的状态...</span>
+                                        <div class="ml-auto flex gap-2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- 快速回复选项 -->
+                                <div class="quick-replies p-2 bg-white border-t border-gray-200 flex gap-2 overflow-x-auto">
+                                    <button class="quick-reply-btn whitespace-nowrap text-xs bg-gray-100 hover:bg-[#F0E6FF] px-3 py-1.5 rounded-full text-gray-700">膝盖有点不舒服</button>
+                                    <button class="quick-reply-btn whitespace-nowrap text-xs bg-gray-100 hover:bg-[#F0E6FF] px-3 py-1.5 rounded-full text-gray-700">今天时间很紧张</button>
+                                    <button class="quick-reply-btn whitespace-nowrap text-xs bg-gray-100 hover:bg-[#F0E6FF] px-3 py-1.5 rounded-full text-gray-700">能增加训练强度吗</button>
+                                    <button class="quick-reply-btn whitespace-nowrap text-xs bg-gray-100 hover:bg-[#F0E6FF] px-3 py-1.5 rounded-full text-gray-700">昨晚没睡好</button>
+                                </div>
+                                
+                                <!-- 隐藏的语音输入选项 -->
+                                <div id="voice-options" class="hidden fixed bottom-0 left-0 right-0 bg-white rounded-t-2xl shadow-lg p-4 z-50" style="transform: translateY(100%);">
+                                    <div class="flex justify-between items-center mb-5">
+                                        <div class="w-8"></div>
+                                        <div class="text-center font-bold text-[#9370DB]">告诉我你的情况</div>
+                                        <button class="close-voice-btn w-8 h-8 flex items-center justify-center rounded-full bg-gray-100" title="关闭选项" aria-label="关闭语音选项面板">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <button class="feedback-btn bg-gray-100 hover:bg-[#F0E6FF] p-3 rounded-xl text-sm text-left transition-all flex items-start" data-index="0">
+                                            <span class="mr-2 p-2 bg-[#9370DB]/10 rounded-lg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#9370DB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="font-medium">膝盖不舒服</div>
+                                                <div class="text-xs text-gray-500">减少下肢压力</div>
+                                            </div>
+                                        </button>
+                                        <button class="feedback-btn bg-gray-100 hover:bg-[#F0E6FF] p-3 rounded-xl text-sm text-left transition-all flex items-start" data-index="1">
+                                            <span class="mr-2 p-2 bg-[#9370DB]/10 rounded-lg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#9370DB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="font-medium">时间不够</div>
+                                                <div class="text-xs text-gray-500">简短高效训练</div>
+                                            </div>
+                                        </button>
+                                        <button class="feedback-btn bg-gray-100 hover:bg-[#F0E6FF] p-3 rounded-xl text-sm text-left transition-all flex items-start" data-index="2">
+                                            <span class="mr-2 p-2 bg-[#9370DB]/10 rounded-lg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#9370DB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="font-medium">状态很好</div>
+                                                <div class="text-xs text-gray-500">增加训练量</div>
+                                            </div>
+                                        </button>
+                                        <button class="feedback-btn bg-gray-100 hover:bg-[#F0E6FF] p-3 rounded-xl text-sm text-left transition-all flex items-start" data-index="3">
+                                            <span class="mr-2 p-2 bg-[#9370DB]/10 rounded-lg">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#9370DB]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                                                </svg>
+                                            </span>
+                                            <div>
+                                                <div class="font-medium">恢复默认计划</div>
+                                                <div class="text-xs text-gray-500">标准训练方案</div>
+                                            </div>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 录音动画效果 -->
+                                <div id="recording-animation" class="hidden fixed inset-0 bg-black/20 backdrop-blur-sm flex items-center justify-center z-40">
+                                    <div class="bg-white rounded-2xl p-6 flex flex-col items-center shadow-lg">
+                                        <div class="recording-wave mb-5">
+                                            <div class="wave-circle"></div>
+                                            <div class="wave-circle"></div>
+                                            <div class="wave-circle"></div>
+                                            
+                                            <!-- 音波动态效果 -->
+                                            <div class="audio-visualizer flex items-center justify-center gap-1 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                                <div class="audio-bar"></div>
+                                                <div class="audio-bar"></div>
+                                                <div class="audio-bar"></div>
+                                                <div class="audio-bar"></div>
+                                                <div class="audio-bar"></div>
+                                            </div>
+                                        </div>
+                                        <div class="text-sm font-bold text-[#9370DB]">正在聆听你的声音...</div>
+                                        <div class="text-xs text-gray-500 mt-1 mb-3">说出你今天的状态</div>
+                                        <button class="cancel-recording-btn px-4 py-1.5 border border-gray-200 rounded-full text-xs text-gray-500">
+                                            轻触取消
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="absolute top-1/3 left-1/6 w-40 h-24 genshin-card rounded-lg transform rotate-3 animate-pulse-light" style="animation-delay: 0.6s; z-index: 3;">
-                            <div class="p-3">
-                                <div class="h-3 w-2/3 bg-accent/50 rounded-full mb-2"></div>
-                                <div class="h-2 w-full bg-primary/30 rounded-full mb-1"></div>
-                                <div class="h-2 w-4/5 bg-primary/30 rounded-full"></div>
-                            </div>
-                        </div>
-                        <img src="https://placehold.co/600x500/C6A5FF/FFF?text=Adaptation+UI" class="w-full h-full object-cover" alt="Nowa 解决方案界面">
                     </div>
                 </div>
                 
@@ -994,6 +1194,221 @@
         
         // Console log for debugging
         console.log("Nowa landing page fully initialized with animations");
+    </script>
+
+    <!-- 适应性UI Demo代码 -->
+    <script>
+        // 适应性UI Demo代码
+        document.addEventListener('DOMContentLoaded', function() {
+            const taskContainer = document.getElementById('task-container');
+            const feedbackBtns = document.querySelectorAll('.feedback-btn');
+            const voiceBtn = document.getElementById('voice-btn');
+            const voiceOptions = document.getElementById('voice-options');
+            const recordingAnimation = document.getElementById('recording-animation');
+            const userMsgContainer = document.getElementById('user-msg-container');
+            const nowyResponseContainer = document.getElementById('nowy-response-container');
+            const typingIndicator = document.querySelector('.typing-indicator');
+            const chatArea = document.querySelector('.chat-area');
+            
+            // 默认计划
+            const defaultPlan = [
+                "10 分钟热身拉伸",
+                "30 分钟有氧",
+                "15 分钟力量训练"
+            ];
+            
+            // 适应性方案
+            const adaptations = [
+                { // 膝盖不舒服
+                    message: "我今天膝盖不舒服",
+                    response: "没关系，我为你调整了计划，减少了对膝盖的压力 (•̀ᴗ•́)و ̑̑",
+                    output: ["10 分钟上肢热身", "减少深蹲，改为站姿核心训练", "20 分钟低冲击有氧"]
+                },
+                { // 时间不够
+                    message: "今天时间不够",
+                    response: "短时间也能锻炼哦！我准备了高效的简化版计划 ᕙ(`▿´)ᕗ",
+                    output: ["5 分钟简易热身", "15 分钟快节奏燃脂", "5 分钟核心训练"]
+                },
+                { // 状态好，加量
+                    message: "状态很好，能多练点吗？",
+                    response: "太棒了！状态好的时候可以适当增加训练量～(≧∀≦)ゞ",
+                    output: ["15 分钟全面热身", "增加 10 分钟核心训练", "40 分钟耐力训练", "10 分钟拉伸放松"]
+                },
+                { // 默认计划
+                    message: "恢复默认计划",
+                    response: "已恢复到默认计划啦，这个强度应该正合适 (´｡• ᵕ •｡`)",
+                    output: defaultPlan
+                }
+            ];
+            
+            // 渲染任务
+            function renderTasks(tasks) {
+                // 清空容器
+                taskContainer.innerHTML = '';
+                
+                // 添加新任务，带动画
+                tasks.forEach((task, index) => {
+                    const taskElement = document.createElement('div');
+                    taskElement.className = 'flex items-center';
+                    taskElement.innerHTML = `
+                        <div class="h-2 w-2 rounded-full bg-[#9370DB] mr-2"></div>
+                        <div>${task}</div>
+                    `;
+                    
+                    // 初始状态
+                    taskElement.style.opacity = '0';
+                    taskElement.style.transform = 'translateY(5px)';
+                    
+                    taskContainer.appendChild(taskElement);
+                    
+                    // 添加动画效果
+                    setTimeout(() => {
+                        taskElement.style.transition = 'all 0.3s ease-out';
+                        taskElement.style.opacity = '1';
+                        taskElement.style.transform = 'translateY(0)';
+                    }, 100 * index);
+                });
+            }
+            
+            // 添加用户消息
+            function addUserMessage(message) {
+                const msgElement = document.createElement('div');
+                msgElement.className = 'flex justify-end mb-4 opacity-0';
+                msgElement.innerHTML = `
+                    <div class="bg-[#9370DB]/20 rounded-2xl rounded-tr-none p-3 max-w-[80%] shadow-sm">
+                        <p class="text-sm">${message}</p>
+                    </div>
+                `;
+                userMsgContainer.appendChild(msgElement);
+                
+                // 滚动到底部
+                chatArea.scrollTop = chatArea.scrollHeight;
+                
+                // 动画显示
+                setTimeout(() => {
+                    msgElement.style.transition = 'opacity 0.3s ease-out';
+                    msgElement.style.opacity = '1';
+                }, 50);
+                
+                return msgElement;
+            }
+            
+            // 添加Nowy响应
+            function addNowyResponse(message, delay = 1000) {
+                // 显示输入中...
+                typingIndicator.style.opacity = '1';
+                
+                setTimeout(() => {
+                    // 隐藏输入中...
+                    typingIndicator.style.opacity = '0';
+                    
+                    const msgElement = document.createElement('div');
+                    msgElement.className = 'flex mb-4 opacity-0';
+                    msgElement.innerHTML = `
+                        <div class="mr-2">
+                            <img src="./assets/images/nowy.png" class="w-8 h-8 rounded-full object-cover bg-white/80" alt="Nowy">
+                        </div>
+                        <div class="bg-white rounded-2xl rounded-tl-none p-3 max-w-[80%] shadow-sm">
+                            <p class="text-sm">${message}</p>
+                        </div>
+                    `;
+                    nowyResponseContainer.appendChild(msgElement);
+                    
+                    // 滚动到底部
+                    chatArea.scrollTop = chatArea.scrollHeight;
+                    
+                    // 动画显示
+                    setTimeout(() => {
+                        msgElement.style.transition = 'opacity 0.3s ease-out';
+                        msgElement.style.opacity = '1';
+                    }, 50);
+                    
+                }, delay);
+            }
+            
+            // 模拟录音和选择
+            function simulateRecording() {
+                // 显示录音动画
+                recordingAnimation.classList.remove('hidden');
+                
+                // 3秒后显示选项
+                setTimeout(() => {
+                    recordingAnimation.classList.add('hidden');
+                    showVoiceOptions();
+                }, 2000);
+            }
+            
+            // 显示语音输入选项
+            function showVoiceOptions() {
+                voiceOptions.classList.remove('hidden');
+                voiceOptions.style.transform = 'translateY(0)';
+                voiceOptions.style.transition = 'transform 0.3s ease-out';
+            }
+            
+            // 隐藏语音输入选项
+            function hideVoiceOptions() {
+                voiceOptions.style.transform = 'translateY(100%)';
+                setTimeout(() => {
+                    voiceOptions.classList.add('hidden');
+                }, 300);
+            }
+            
+            // 处理适应性变化
+            function handleAdapt(index) {
+                // 隐藏选项
+                hideVoiceOptions();
+                
+                // 添加用户消息
+                addUserMessage(adaptations[index].message);
+                
+                // 添加Nowy的回应
+                addNowyResponse(adaptations[index].response);
+                
+                // 更新训练计划
+                setTimeout(() => {
+                    // 任务淡出
+                    const currentTasks = taskContainer.querySelectorAll('div');
+                    currentTasks.forEach(task => {
+                        task.style.opacity = '0';
+                        task.style.transform = 'translateY(-5px)';
+                    });
+                    
+                    // 延迟后添加新任务
+                    setTimeout(() => {
+                        renderTasks(adaptations[index].output);
+                    }, 300);
+                    
+                }, 2000);
+            }
+            
+            // 麦克风按钮点击
+            voiceBtn.addEventListener('click', function() {
+                simulateRecording();
+            });
+            
+            // 录音动画点击取消
+            recordingAnimation.addEventListener('click', function() {
+                recordingAnimation.classList.add('hidden');
+            });
+            
+            // 添加按钮点击效果
+            feedbackBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 视觉反馈
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 100);
+                    
+                    // 适应计划
+                    const index = parseInt(this.getAttribute('data-index'));
+                    handleAdapt(index);
+                });
+            });
+            
+            // 初始渲染
+            renderTasks(defaultPlan);
+        });
     </script>
 </body>
 </html> 
