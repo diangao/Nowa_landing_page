@@ -342,6 +342,24 @@
             letter-spacing: 0.01em;
         }
         
+        /* 为大标题添加更圆润的样式 */
+        h1, h2, .section-title {
+            letter-spacing: 0.025em;
+            line-height: 1.3;
+            transform-origin: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        h1 {
+            font-family: 'Comfortaa', 'HYWenHei', 'Noto Sans SC Rounded', 'Varela Round', sans-serif;
+        }
+
+        .gradient-text {
+            font-family: 'Comfortaa', 'HYWenHei', 'Noto Sans SC Rounded', 'Varela Round', sans-serif;
+            border-radius: 0.25rem;
+            padding: 0 0.25rem;
+        }
+        
         /* 为按钮和互动元素添加可爱字体 */
         button, .interactive-element {
             font-family: 'Comfortaa', 'Quicksand', 'Varela Round', sans-serif;
@@ -376,6 +394,39 @@
         
         .rounded-xl {
             border-radius: 1.5rem !important; /* 更大的圆角 */
+        }
+
+        /* 移除图片白色边框，更好地融入背景 */
+        .hero-image {
+            mix-blend-mode: multiply;
+            filter: contrast(1.05) drop-shadow(0 0 8px rgba(168, 221, 255, 0.3));
+            max-width: 90%;
+            height: auto;
+            position: relative;
+            z-index: 30;
+        }
+
+        /* 增加图片处理相关的CSS */
+        #hero {
+            background: transparent !important;
+            position: relative;
+            z-index: 1;
+        }
+        
+        #hero::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at center, rgba(255,246,225,0.3) 0%, rgba(234,247,255,0.3) 100%);
+            z-index: 0;
+        }
+        
+        #hero .container {
+            position: relative;
+            z-index: 10;
         }
     </style>
 </head>
@@ -418,11 +469,9 @@
                 </div>
             </div>
             <div class="lg:w-1/2 mt-12 lg:mt-0 flex justify-center relative">
-                <!-- Character illustration with animated interface -->
+                <!-- 用全新方法处理图片背景 -->
                 <div class="w-full h-[500px] relative animate-float">
-                    <div class="absolute top-1/4 left-1/4 w-64 h-40 bg-white/40 backdrop-filter backdrop-blur-md -webkit-backdrop-filter blur(10px) rounded-xl transform rotate-6 animate-pulse-light"></div>
-                    <div class="absolute top-1/3 left-1/3 w-48 h-32 bg-white/40 backdrop-filter backdrop-blur-md -webkit-backdrop-filter blur(10px) rounded-xl transform -rotate-3 animate-pulse-light" style="animation-delay: 0.5s;"></div>
-                    <img src="https://placehold.co/600x500/A8C7FF/FFF?text=AI+Coach+Character" class="w-full h-full object-contain z-10 relative" alt="Nowa AI Coach">
+                    <img src="./assets/images/nowy.png" class="w-full h-full object-contain hero-image" alt="Nowa AI Coach">
                 </div>
             </div>
         </div>
@@ -597,16 +646,10 @@
                             <div class="mb-4 text-lg border-l-4 border-primary pl-4 italic text-dark/70 quote">
                                 "我想健身，但不知道从何开始...一堆计划，看得头晕。"
                             </div>
-                            <div class="genshin-card p-3 rounded-lg border border-primary/30 mb-3 transform hover:scale-105 transition-transform duration-300">
-                                <div class="flex items-center">
-                                    <span class="text-primary mr-2">·</span>
-                                    <p class="text-sm">Nowa 分析中：了解用户目标和限制因素...</p>
-                                </div>
-                            </div>
-                            <div class="genshin-card p-3 rounded-lg border border-accent/30 transform hover:scale-105 transition-transform duration-300">
-                                <div class="flex items-center">
-                                    <span class="text-accent mr-2">·</span>
-                                    <p class="text-sm">生成适合初学者的 15 分钟基础活动方案</p>
+                            <div class="genshin-card p-4 rounded-lg border border-accent/30 mb-3">
+                                <div class="flex items-start">
+                                    <span class="text-accent mr-2 text-xl">👉</span>
+                                    <p class="text-content"><span class="font-bold text-accent">Nowy:</span> "别急，先从简单的开始吧～了解一下你的习惯和节奏，我会帮你找到最适合的第一步 ( •̀ ω •́ )✧ 试试看 15 分钟的轻松活动，先让身体适应起来！"</p>
                                 </div>
                             </div>
                         </div>
@@ -632,10 +675,10 @@
                             <div class="h-2 w-full bg-gray-200 rounded-full overflow-hidden">
                                 <div class="h-full bg-gradient-to-r from-primary to-accent rounded-full" style="width: 78%"></div>
                             </div>
-                            <div class="genshin-card p-3 rounded-lg border border-accent/30 mt-4 transform hover:scale-105 transition-transform duration-300">
-                                <div class="flex items-center">
-                                    <span class="text-accent mr-2">·</span>
-                                    <p class="text-sm">Nowa 建议：继续保持，已调整训练难度适应你的进步</p>
+                            <div class="genshin-card p-4 rounded-lg border border-accent/30 mt-4">
+                                <div class="flex items-start">
+                                    <span class="text-accent mr-2 text-xl">👉</span>
+                                    <p class="text-content"><span class="font-bold text-accent">Nowy:</span> "厉害呀！最难的就是前 10 天，你已经成功迈过去了～(๑•̀ㅂ•́)و✧ 现在的节奏很好，先保持住，等身体适应了，我们再慢慢加一点挑战，不用急着一下子做到完美。"</p>
                                 </div>
                             </div>
                         </div>
@@ -652,7 +695,7 @@
                     <div class="md:w-1/2 md:pl-12">
                         <div class="genshin-card rounded-xl p-6 animate-float" style="animation-delay: 0.2s;">
                             <div class="mb-4 text-lg border-l-4 border-primary pl-4 italic text-dark/70 quote">
-                                "虽然有几天偷懒了，但 Nowa 没有责备我，而是调整了计划。一个月下来，体重居然下降了 2.5kg！"
+                                "虽然有几天偷懒了，但 Nowy 没有责备我，而是调整了计划…一个月下来，体重居然下降了 2.5kg！"
                             </div>
                             <div class="flex space-x-4 mb-4">
                                 <div class="flex-1 genshin-card p-3 rounded-lg border border-primary/30">
@@ -668,10 +711,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="genshin-card p-3 rounded-lg border border-accent/30 transform hover:scale-105 transition-transform duration-300">
-                                <div class="flex items-center">
-                                    <span class="text-accent mr-2">·</span>
-                                    <p class="text-sm">准备进入第二阶段：增加力量训练比例</p>
+                            <div class="genshin-card p-4 rounded-lg border border-accent/30">
+                                <div class="flex items-start">
+                                    <span class="text-accent mr-2 text-xl">👉</span>
+                                    <p class="text-content"><span class="font-bold text-accent">Nowy:</span> "这就是找到合适节奏的感觉～ヽ(✿ﾟ▽ﾟ)ノ 运动不是非黑即白，偶尔调整一下没关系，重要的是你已经坚持了一个月，还看到了变化！可以考虑加一点力量训练，效果会更稳更明显。"</p>
                                 </div>
                             </div>
                         </div>
@@ -704,10 +747,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="genshin-card p-3 rounded-lg border border-accent/30 transform hover:scale-105 transition-transform duration-300">
-                                <div class="flex items-center">
-                                    <span class="text-accent mr-2">·</span>
-                                    <p class="text-sm">恭喜达成里程碑！已解锁高级训练方案</p>
+                            <div class="genshin-card p-4 rounded-lg border border-accent/30">
+                                <div class="flex items-start">
+                                    <span class="text-accent mr-2 text-xl">👉</span>
+                                    <p class="text-content"><span class="font-bold text-accent">Nowy:</span> "这就是从'想坚持'到'自然融入生活'的变化 ( ´ ▽ ` )ﾉ 现在的你，已经不需要逼自己，而是找到了一种舒服的方式来让身体更健康了！接下来可以试试更多有趣的训练，让运动变成真正的享受～"</p>
                                 </div>
                             </div>
                         </div>
